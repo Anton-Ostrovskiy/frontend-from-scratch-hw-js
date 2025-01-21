@@ -17,7 +17,8 @@ const game = {
   },
   addResource(resource, amount) {
       if(!game.resources.hasOwnProperty(resource)){
-        return "Invalid resource"
+        return console.log("Invalid resource");
+        
       }
       game.resources[resource] += amount
       return game
@@ -25,4 +26,4 @@ const game = {
 }
 
 
-console.log(game.addResource("gold", 50));
+console.log(game.addResource("fg", 50));
