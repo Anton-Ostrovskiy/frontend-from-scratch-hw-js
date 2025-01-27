@@ -17,3 +17,42 @@ const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/784380b9-6937-42a6-bdfe-869835820234_html-magic-logo.jpg',
 ]
+
+const image = document.querySelector('#web-tech-image');
+const prevButton = document.querySelector('#prev-button');
+const nextButton = document.querySelector('#next-button');
+
+let currentIndex = 0;
+// console.log(currentIndex);
+
+// prevButton.addEventListener('click', function () {
+    
+//     currentIndex = (currentIndex - 1 + WEB_TECH_IMAGES.length) % WEB_TECH_IMAGES.length;
+//     console.log(currentIndex);
+//     image.setAttribute('src', WEB_TECH_IMAGES[currentIndex]);
+// });
+
+// nextButton.addEventListener('click', function () {
+    
+//     currentIndex = (currentIndex + 1) % WEB_TECH_IMAGES.length;
+//     console.log(currentIndex);
+//     image.setAttribute('src', WEB_TECH_IMAGES[currentIndex]);
+// });
+
+prevButton.addEventListener('click', function () {
+  if (currentIndex === 0) {
+      currentIndex = WEB_TECH_IMAGES.length - 1; // Переход к последнему изображению
+  } else {
+      currentIndex -= 1; // Переход к предыдущему изображению
+  }
+  image.setAttribute('src', WEB_TECH_IMAGES[currentIndex]);
+});
+
+nextButton.addEventListener('click', function () {
+  if (currentIndex === WEB_TECH_IMAGES.length - 1) {
+      currentIndex = 0; // Переход к первому изображению
+  } else {
+      currentIndex += 1; // Переход к следующему изображению
+  }
+  image.setAttribute('src', WEB_TECH_IMAGES[currentIndex]);
+});
