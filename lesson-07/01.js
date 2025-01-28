@@ -6,4 +6,22 @@
   Другой вариант - использовать метод split строк, и метод массива join.
 */
 
-function capitalizeWords() {}
+function capitalizeWords(str) {
+  let result = "";
+  let firstLetter = true;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      result += str[i];
+      firstLetter = true;
+    } else {
+      if (firstLetter) {
+        result += str[i].toUpperCase();
+        firstLetter = false;
+      } else {
+        result += str[i];
+      }
+    }
+  }
+  return result;
+}
+console.log(capitalizeWords("hello world from javascript"));
