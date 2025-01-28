@@ -4,7 +4,12 @@
  */
 
 function isNumeric(str) {
-  return isFinite(str);
+  if (str.trim().length === 0) { // Проверяем, чтобы строка не была пустой после удаления пробелов
+    return false;
+  } else {
+    return isFinite(str);
+  }
+  
 }
 
 console.log(isNumeric("123")) // Ожидаемый результат: true
