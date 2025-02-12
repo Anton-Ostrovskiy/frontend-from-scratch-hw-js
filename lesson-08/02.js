@@ -37,6 +37,7 @@ startButton.addEventListener('click', () => {
 
   if (!isTimerStarted) {
     isTimerStarted = true
+    countdownDisplay.textContent = counter;
     timerId = setInterval(() => {
       countdownDisplay.textContent = counter
       counter -= 1
