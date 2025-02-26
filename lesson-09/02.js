@@ -28,12 +28,12 @@ const numbers = [1, 2, 3, 4, 5]
 
 const map = (numbers, callback) => {
   const newArray = [];
-  for(index =0; index < numbers.length; index++){
+  for(let index =0; index < numbers.length; index++){
     const element = numbers[index];
-    if(callback(element, index)){
+
       const result = callback(element,index)
       newArray.push(result);
-    }
+
   }
   return newArray;
 }
