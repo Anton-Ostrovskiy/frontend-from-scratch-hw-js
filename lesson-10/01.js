@@ -58,7 +58,7 @@ const view = {
     list.addEventListener("click", (e)=>{
       const item = event.target;
       if(item.classList.contains("delete-button")){
-        const movieId = item.parentElement.id;
+        const movieId = Number(item.parentElement.id);
         controller.deleteMovie(movieId);
       }
     })
